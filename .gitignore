@@ -5,3 +5,4 @@ autoload.php
 /vendor/
 app/cache
 app/logs
+web/bundles
