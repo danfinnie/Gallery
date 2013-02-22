@@ -1,0 +1,3 @@
+dan_finnie_gallery_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DanFinnieGalleryBundle:Default:index }
