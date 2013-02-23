@@ -1,0 +1,13 @@
+DanFinnie\GalleryBundle\Entity\Piece:
+    type: entity
+    table: pieces
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        title:
+            type: string
+            length: 255
+        imgUrl:
+            type: text
