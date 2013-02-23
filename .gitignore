@@ -6,3 +6,4 @@ autoload.php
 app/cache
 app/logs
 web/bundles
+src/DanFinnie/GalleryBundle/Entity
