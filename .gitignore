@@ -8,3 +8,4 @@ app/logs
 web/bundles
 app/config/parameters.yml
 app/config/parameters.yml.bak
+web/uploads
