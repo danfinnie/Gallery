@@ -55,6 +55,7 @@ doctrine:
             default:
                 mappings:
                     SonataMediaBundle: ~
+                    ApplicationSonataMediaBundle: ~
                     DanFinnieGalleryBundle: ~
 
 # Swiftmailer Configuration
