@@ -6,7 +6,5 @@ autoload.php
 app/cache
 app/logs
 web/bundles
-src/DanFinnie/GalleryBundle/Entity
 app/config/parameters.yml
 app/config/parameters.yml.bak
-src/Application
