@@ -8,3 +8,4 @@ app/logs
 web/bundles
 src/DanFinnie/GalleryBundle/Entity
 app/config/parameters.yml
+app/Application

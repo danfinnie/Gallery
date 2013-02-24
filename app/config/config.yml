@@ -46,10 +46,16 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+        entity_managers:
+            default:
+                mappings:
+                    SonataMediaBundle: ~
+                    DanFinnieGalleryBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -59,7 +65,7 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-# Sonata Configuration
+# Sonata Admin Configuration
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -68,6 +74,32 @@ sonata_block:
 
         sonata.block.service.text:
         sonata.block.service.rss:
+
+# Sonata Media Configuration
+sonata_media:
+    default_context: default
+    db_driver: doctrine_orm
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                # - sonata.media.provider.dailymotion
+                # - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                # - sonata.media.provider.file
+
+            formats:
+                small: { width: 100 , quality: 90}
+                big:   { width: 500 , quality: 90}
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     false
+    # providers:
+    #     image:
+    #         resizer: sonata.media.resizer.square
 
 # Default Sonata Admin configuration below
 # sonata_admin:

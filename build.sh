@@ -3,6 +3,7 @@
 php composer.phar install
 php composer.phar dumpautoload # Only some environments need this...
 php app/console doctrine:generate:entities DanFinnie --path src/
+php app/console sonata:easy-extends:generate SonataMediaBundle
 php app/console doctrine:schema:create
 cp app/config/parameters.yml{dist,}
 

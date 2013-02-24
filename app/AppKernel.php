@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new SimpleThings\EntityAudit\SimpleThingsEntityAuditBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new DanFinnie\GalleryBundle\DanFinnieGalleryBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
