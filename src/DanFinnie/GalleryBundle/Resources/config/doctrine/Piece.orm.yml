@@ -1,6 +1,9 @@
 DanFinnie\GalleryBundle\Entity\Piece:
     type: entity
     table: pieces
+    oneToOne:
+        picture:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
     id:
         id:
             type: integer
@@ -9,5 +12,3 @@ DanFinnie\GalleryBundle\Entity\Piece:
         title:
             type: string
             length: 255
-        imgUrl:
-            type: text

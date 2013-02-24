@@ -80,4 +80,32 @@ class Piece
     {
         return $this->imgUrl;
     }
+    /**
+     * @var \Application\Sonata\MediaBundle\Entity\Media
+     */
+    private $picture;
+
+
+    /**
+     * Set picture
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Media $picture
+     * @return Piece
+     */
+    public function setPicture(\Application\Sonata\MediaBundle\Entity\Media $picture = null)
+    {
+        $this->picture = $picture;
+    
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Media 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
 }

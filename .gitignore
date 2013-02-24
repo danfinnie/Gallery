@@ -9,3 +9,4 @@ web/bundles
 app/config/parameters.yml
 app/config/parameters.yml.bak
 web/uploads
+src/DanFinnie/GalleryBundle/Entity/*.php~
