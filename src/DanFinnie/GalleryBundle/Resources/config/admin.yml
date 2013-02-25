@@ -1,14 +1,25 @@
 parameters:
     sonata.admin.piece.class: DanFinnie\GalleryBundle\Admin\PieceAdmin
+    sonata.admin.category.class: DanFinnie\GalleryBundle\Admin\CategoryAdmin
 
 services:
     sonata.admin.piece:
         class: %sonata.admin.piece.class%
         tags:
-            - { name: sonata.admin, manager_type: orm, group: pieces, label: "Piecez" }
+            - { name: sonata.admin, manager_type: orm, group: pieces, label: "Pieces" }
         arguments:
             - ~
             - DanFinnie\GalleryBundle\Entity\Piece
+            - 'SonataAdminBundle:CRUD'
+        calls:
+            - [ setTranslationDomain, [DanFinnieGalleryBundle]]
+    sonata.admin.category:
+        class: %sonata.admin.category.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: pieces, label: "Categories" }
+        arguments:
+            - ~
+            - DanFinnie\GalleryBundle\Entity\Category
             - 'SonataAdminBundle:CRUD'
         calls:
             - [ setTranslationDomain, [DanFinnieGalleryBundle]]
