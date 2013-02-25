@@ -1,0 +1,8 @@
+# This file contains stuff that would normally be in your security.yml file but that you don't want in VCS.
+
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+                    USERNAME: { password: PASSWORD, roles: [ 'ROLE_ADMIN' ] }

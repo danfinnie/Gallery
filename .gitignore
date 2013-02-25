@@ -10,3 +10,4 @@ app/config/parameters.yml
 app/config/parameters.yml.bak
 web/uploads
 src/DanFinnie/GalleryBundle/Entity/*.php~
+app/config/security_private.yml
