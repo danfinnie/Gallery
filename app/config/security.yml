@@ -24,12 +24,12 @@ security:
         admin_area:
             pattern:    ^/
             anonymous: ~
-            form_login: ~
+            form_login:
+                default_target_path: /admin/dashboard
+                always_use_default_target_path: true
             logout:
                 path:   logout
                 target: /
-            default_target_path: /admin/dashboard
-            always_use_default_target_path: true
 
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
