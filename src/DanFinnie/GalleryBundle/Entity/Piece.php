@@ -20,9 +20,9 @@ class Piece
     private $title;
 
     /**
-     * @var string
+     * @var \Application\Sonata\MediaBundle\Entity\Media
      */
-    private $imgUrl;
+    private $picture;
 
 
     /**
@@ -57,34 +57,6 @@ class Piece
     {
         return $this->title;
     }
-
-    /**
-     * Set imgUrl
-     *
-     * @param string $imgUrl
-     * @return Piece
-     */
-    public function setImgUrl($imgUrl)
-    {
-        $this->imgUrl = $imgUrl;
-    
-        return $this;
-    }
-
-    /**
-     * Get imgUrl
-     *
-     * @return string 
-     */
-    public function getImgUrl()
-    {
-        return $this->imgUrl;
-    }
-    /**
-     * @var \Application\Sonata\MediaBundle\Entity\Media
-     */
-    private $picture;
-
 
     /**
      * Set picture
