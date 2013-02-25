@@ -1,6 +1,6 @@
 _welcome:
     pattern:  /
-    defaults: { _controller: AcmeDemoBundle:Welcome:index }
+    defaults: { _controller: DanFinnieGalleryBundle:Default:index, name: "Danny Boi" }
 
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
