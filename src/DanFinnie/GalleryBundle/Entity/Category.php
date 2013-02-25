@@ -52,4 +52,8 @@ class Category
     {
         return $this->title;
     }
+
+    public function __toString() {
+        return $this->getTitle();
+    }
 }

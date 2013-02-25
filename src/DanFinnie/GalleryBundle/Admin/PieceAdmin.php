@@ -14,6 +14,7 @@ class PieceAdmin extends Admin
         $formMapper
             ->add('id', 'hidden')
             ->add('title')
+            ->add('category')
             ->add('picture', 'sonata_type_model')
         ;
     }
@@ -23,6 +24,7 @@ class PieceAdmin extends Admin
         $datagridMapper
         	->add('id')
             ->add('title')
+            ->add('category')
             ->add('picture')
         ;
     }
@@ -32,6 +34,7 @@ class PieceAdmin extends Admin
         $listMapper
             ->addIdentifier('id')
             ->add('title')
+            ->add('category')
             ->add('picture')
         ;
     }
