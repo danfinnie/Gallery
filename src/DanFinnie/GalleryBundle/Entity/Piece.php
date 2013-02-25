@@ -80,4 +80,32 @@ class Piece
     {
         return $this->picture;
     }
+    /**
+     * @var \DanFinnie\GalleryBundle\Entity\Category
+     */
+    private $category;
+
+
+    /**
+     * Set category
+     *
+     * @param \DanFinnie\GalleryBundle\Entity\Category $category
+     * @return Piece
+     */
+    public function setCategory(\DanFinnie\GalleryBundle\Entity\Category $category = null)
+    {
+        $this->category = $category;
+    
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return \DanFinnie\GalleryBundle\Entity\Category 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

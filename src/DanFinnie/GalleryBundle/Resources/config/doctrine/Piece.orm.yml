@@ -4,6 +4,9 @@ DanFinnie\GalleryBundle\Entity\Piece:
     oneToOne:
         picture:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media
+    manyToOne:
+        category:
+            targetEntity: Category
     id:
         id:
             type: integer
