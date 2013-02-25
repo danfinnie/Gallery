@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 
+curl -sS https://getcomposer.org/installer | php
 php composer.phar install
 php composer.phar dumpautoload # Only some environments need this...
 # php app/console doctrine:generate:entities DanFinnie --path src/
