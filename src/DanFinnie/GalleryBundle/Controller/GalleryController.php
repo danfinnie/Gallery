@@ -16,11 +16,23 @@ class GalleryController extends Controller
 
     public function showCategoryAction($id)
     {
-        return $this->render('DanFinnieGalleryBundle:Default:index.html.twig', array('name' => "yes"));
+        $CategoriesRepo = $this->get('doctrine')->getRepository('DanFinnieGalleryBundle:Category');
+        $PiecesRepo = $this->get('doctrine')->getRepository('DanFinnieGalleryBundle:Piece');
+
+        $Category = $CategoriesRepo->find($id);
+        $pieces = $PiecesRepo->findAll(array("category" => $Category), array("order"));
+
+        return $this->render('DanFinnieGalleryBundle:Gallery:category.html.twig', array(
+            'pieces' => $pieces,
+            'category' => $Category
+        ));
     }
 
     public function showPieceAction($id)
     {
-        return $this->render('DanFinnieGalleryBundle:Default:index.html.twig', array('name' => "yes"));
+        $PiecesRepo = $this->get('doctrine')->getRepository('DanFinnieGalleryBundle:Piece');
+        $Piece = $PiecesRepo->find($id);
+
+        return $this->render('DanFinnieGalleryBundle:Gallery:piece.html.twig', array('piece' => $Piece));
     }
 }
