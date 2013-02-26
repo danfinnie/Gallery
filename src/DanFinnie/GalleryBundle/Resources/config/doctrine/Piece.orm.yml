@@ -15,3 +15,5 @@ DanFinnie\GalleryBundle\Entity\Piece:
         title:
             type: string
             length: 255
+        order:
+            type: integer

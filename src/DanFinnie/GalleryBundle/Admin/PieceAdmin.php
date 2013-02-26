@@ -15,6 +15,7 @@ class PieceAdmin extends Admin
             ->add('id', 'hidden')
             ->add('title')
             ->add('category')
+            ->add('order')
             ->add('picture', 'sonata_type_model')
         ;
     }
@@ -25,6 +26,7 @@ class PieceAdmin extends Admin
         	->add('id')
             ->add('title')
             ->add('category')
+            ->add('order')
             ->add('picture')
         ;
     }
@@ -35,6 +37,7 @@ class PieceAdmin extends Admin
             ->addIdentifier('id')
             ->add('title')
             ->add('category')
+            ->add('order')
             ->add('picture')
         ;
     }
