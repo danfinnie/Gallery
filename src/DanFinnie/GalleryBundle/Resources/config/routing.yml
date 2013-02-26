@@ -1,3 +1,11 @@
 dan_finnie_gallery_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: DanFinnieGalleryBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: DanFinnieGalleryBundle:Gallery:showCategories }
+
+dan_finnie_gallery_category_page:
+    pattern:  /category/{id}
+    defaults: { _controller: DanFinnieGalleryBundle:Gallery:showCategory }
+
+dan_finnie_gallery_piece_page:
+    pattern:  /piece/{id}
+    defaults: { _controller: DanFinnieGalleryBundle:Gallery:showPiece }
