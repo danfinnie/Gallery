@@ -14,18 +14,12 @@ class GalleryController extends Controller
 
         return $this->render('DanFinnieGalleryBundle:Gallery:grid_display.html.twig', array(
             'title' => "Zackerman's Gallery",
-            'grid' => array_map(function($Category) use ($Router) {
-                return array(
-                    "title" => $Category->getTitle(),
-                    "path" => $Router->generate('dan_finnie_gallery_category_page', array('id' => $Category->getId())),
-                );
-            }, $categories),
+            'grid' => $this->getGrid($categories, 'dan_finnie_gallery_category_page'),
         ));
     }
 
     public function showCategoryAction($id)
     {
-        $Router = $this->get('router');
         $CategoriesRepo = $this->get('doctrine')->getRepository('DanFinnieGalleryBundle:Category');
         $PiecesRepo = $this->get('doctrine')->getRepository('DanFinnieGalleryBundle:Piece');
 
@@ -34,12 +28,7 @@ class GalleryController extends Controller
 
         return $this->render('DanFinnieGalleryBundle:Gallery:grid_display.html.twig', array(
             'title' => $Category->getTitle(),
-            'grid' => array_map(function($Piece) use ($Router) {
-                return array(
-                    "title" => $Piece->getTitle(),
-                    "path" => $Router->generate('dan_finnie_gallery_piece_page', array('id' => $Piece->getId())),
-                );
-            }, $pieces),
+            'grid' => $this->getGrid($pieces, 'dan_finnie_gallery_piece_page'),
         ));
     }
 
@@ -49,5 +38,23 @@ class GalleryController extends Controller
         $Piece = $PiecesRepo->find($id);
 
         return $this->render('DanFinnieGalleryBundle:Gallery:piece.html.twig', array('piece' => $Piece));
+    }
+
+    /**
+     * Given an array of objects and routes, generate an array suitable for passing
+     * in as the "grid" for grid_display.html.twig.
+     * 
+     * The elemens in $ary must respond to the getId() and getTitle() methods.  The route
+     * must have an id parameter to put the result of getId().
+     */
+    private function getGrid($ary, $route) {
+        $Router = $this->get('router');
+
+        return array_map(function($elem) use ($Router, $route) {
+            return array(
+                "title" => $elem->getTitle(),
+                "path" => $Router->generate($route, array('id' => $elem->getId())),
+            );
+        }, $ary);
     }
 }
