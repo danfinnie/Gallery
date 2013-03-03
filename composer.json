@@ -22,16 +22,20 @@
         "kriswallsmith/assetic": "1.1.*@dev",
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-	"sonata-project/media-bundle": "dev-master"
+	"sonata-project/media-bundle": "dev-master",
+        "mopa/bootstrap-bundle": "dev-master",
+        "twitter/bootstrap": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
