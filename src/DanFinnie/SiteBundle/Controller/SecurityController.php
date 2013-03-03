@@ -1,6 +1,6 @@
 <?php
 
-namespace DanFinnie\GalleryBundle\Controller;
+namespace DanFinnie\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
@@ -23,7 +23,7 @@ class SecurityController extends Controller
         }
 
         return $this->render(
-            'DanFinnieGalleryBundle:Security:login.html.twig',
+            'DanFinnieSiteBundle:Security:login.html.twig',
             array(
                 // last username entered by the user
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
