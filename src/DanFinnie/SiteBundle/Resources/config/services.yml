@@ -1,0 +1,7 @@
+parameters:
+#    dan_finnie_site.example.class: DanFinnie\SiteBundle\Example
+
+services:
+#    dan_finnie_site.example:
+#        class: %dan_finnie_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
