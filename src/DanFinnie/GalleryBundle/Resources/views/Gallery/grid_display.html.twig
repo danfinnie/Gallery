@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+
+<ul>
+	{% for cell in grid %}
+		<li>
+			<a href="{{ cell.path }}">{{ cell.title }}</a>
+		</li>
+	{% endfor %}
+</ul>

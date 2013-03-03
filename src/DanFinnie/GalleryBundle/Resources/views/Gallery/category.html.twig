@@ -1,9 +1,0 @@
-<h1>{{ category.title }}</h1>
-
-<ul>
-	{% for piece in pieces %}
-		<li>
-			<a href="{{ path('dan_finnie_gallery_piece_page', {id: piece.id}) }}">{{ piece.title }}</a>
-		</li>
-	{% endfor %}
-</ul>
