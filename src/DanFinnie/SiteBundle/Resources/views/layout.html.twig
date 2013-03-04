@@ -2,4 +2,12 @@
 
 {% block navbar %}{{ mopa_bootstrap_navbar('frontendNavbar') }}{% endblock navbar %}
 
+{% block stylesheets %}
+{% stylesheets filter='less,cssrewrite,?yui_css'
+   '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
+%}
+<link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+{% endstylesheets %}
+{% endblock %}
+
 {% block title %}Yourapp{% endblock %}
