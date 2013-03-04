@@ -22,9 +22,10 @@
         "kriswallsmith/assetic": "1.1.*@dev",
         "sonata-project/admin-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
-	"sonata-project/media-bundle": "dev-master",
+	    "sonata-project/media-bundle": "dev-master",
         "mopa/bootstrap-bundle": "dev-master",
-        "twitter/bootstrap": "dev-master"
+        "twitter/bootstrap": "dev-master",
+        "knplabs/knp-menu-bundle": "1.1.x-dev"
     },
     "scripts": {
         "post-install-cmd": [

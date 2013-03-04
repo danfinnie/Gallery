@@ -2,18 +2,35 @@ parameters:
 #    dan_finnie_site.example.class: DanFinnie\SiteBundle\Example
 
 services:
-#    dan_finnie_site.example:
-#        class: %dan_finnie_site.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
     dan_finnie_site.navbar:
-        class: %mopa_bootstrap.navbar.generic%
+        class: '%mopa_bootstrap.navbar.generic%'
+        scope: request
         arguments:
-            # first argument: a named array of menues:
-            - { leftmenu: @mopa_bootstrap.examplemenu=, rightmenu: @mopa_bootstrap.exampledropdown= }
-            # second argument: a named array of FormType Classes  
-            - { searchform: Mopa\Bundle\BootstrapSandboxBundle\Form\Type\ExampleSearchFormType }
-            # third argument: a named array of options
-            - { title: "MopaBootstrapBundle", titleRoute: "mopa_bootstrap_welcome", fixedTop: true, isFluid: false, template: MopaBootstrapBundle:Navbar:navbar.html.twig }
+            - { leftmenu: @dan_finnie_site.navbar_main_menu=, rightmenu: @dan_finnie_site.navbar_right_menu= }
+            - {}
+            - { title: "dan_finnie_site", titleRoute: "dan_finnie_gallery_homepage", fixedTop: true, isFluid: false }
         tags:
-            # The alias is used to retrieve the navbar in templates
             - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
+
+    dan_finnie_site.navbar_menu_builder:
+        class: DanFinnie\SiteBundle\Menu\NavbarMenuBuilder
+        scope: request
+        arguments: [ '@knp_menu.factory', '@security.context' ]
+
+    dan_finnie_site.navbar_main_menu:
+        class: Knp\Menu\MenuItem
+        factory_service: dan_finnie_site.navbar_menu_builder
+        factory_method: createMainMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: main }
+
+    dan_finnie_site.navbar_right_menu:
+        class: Knp\Menu\MenuItem
+        factory_service: dan_finnie_site.navbar_menu_builder
+        factory_method: createRightSideDropdownMenu
+        arguments: [ '@request' ]
+        scope: request
+        tags:
+            - { name: knp_menu.menu, alias: main }

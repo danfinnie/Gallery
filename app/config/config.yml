@@ -67,6 +67,9 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+mopa_bootstrap:
+    navbar: ~
+
 # Sonata Admin Configuration
 sonata_block:
     default_contexts: [cms]
