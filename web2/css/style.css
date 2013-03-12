@@ -1,0 +1,58 @@
+* {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poiret One', sans-serif;
+}
+
+#header {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#header h1 {
+    font-size: 5em;
+    margin: 0;
+}
+
+#nav {
+    list-style-type: none;
+    text-align: center;
+}
+
+#nav li {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+#photos {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#photos .photo {
+    width: 320px;
+    height: 212px;
+    margin: 60px 20px;
+    float: left;
+    background-size: cover;
+    position: relative;
+    overflow: show;
+}
+
+#photos .photo .title, #photos .photo .desc {
+    position: absolute;
+    top: 210px;
+    text-align: center;
+    width: 320px;
+}
+
+#photos .photo .desc {
+    top: 230px;
+    color: grey;
+}
