@@ -26,7 +26,8 @@
         "mopa/bootstrap-bundle": "dev-master",
         "twitter/bootstrap": "dev-master",
         "knplabs/knp-menu-bundle": "1.1.x-dev",
-        "simplethings/entity-audit-bundle": "dev-master"
+        "simplethings/entity-audit-bundle": "dev-master",
+        "doctrine/doctrine-migrations-bundle": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
